@@ -57,7 +57,7 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 422,
+   "lines": 424,
    "group": "The book and the ledgers",
    "group_key": "(root)"
   },
@@ -117,7 +117,7 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 193,
+   "lines": 207,
    "group": "The book and the ledgers",
    "group_key": "(root)"
   },
@@ -322,12 +322,22 @@
    "group_key": "Brad Devices/"
   },
   {
+   "path": "Brad Devices/Vision/BRADVISION_API.md",
+   "title": "BradVision API — the camera contract",
+   "state": "PROPOSAL",
+   "state_class": "gen2",
+   "declared": "PROPOSED",
+   "lines": 195,
+   "group": "Products — the consumer line",
+   "group_key": "Brad Devices/"
+  },
+  {
    "path": "Brad Devices/Vision/BRADVISION_COMPLETE.md",
    "title": "BradVision — Complete Camera & Vision System",
    "state": "GEN 1",
    "state_class": "gen1",
    "declared": "shipping 2026.",
-   "lines": 398,
+   "lines": 476,
    "group": "Products — the consumer line",
    "group_key": "Brad Devices/"
   },
