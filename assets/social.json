@@ -6,13 +6,34 @@
    "url": "https://github.com/Brad-Devices",
    "role": "Receipt",
    "about": "Every repository, every commit, every CI run. Public, cloneable, and the only place the toolchain actually exists as code.",
-   "facts": [],
-   "avatar": "",
-   "handle": "",
-   "name": "",
-   "bio": "",
-   "status": "unreachable",
-   "note": "API rate limit exceeded for 154.159.238.172. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)"
+   "facts": [
+    [
+     "Account type",
+     "Organization"
+    ],
+    [
+     "Repositories in this org",
+     "7"
+    ],
+    [
+     "Location",
+     "Kisumu, Kenya"
+    ],
+    [
+     "Created",
+     "2026-10-08"
+    ],
+    [
+     "Links to",
+     "https://brad-devices.vercel.app"
+    ]
+   ],
+   "avatar": "social/github",
+   "handle": "Brad-Devices",
+   "name": "Brad Devices",
+   "bio": "Computer company by Festus Bradley Nyadimo, Kisumu, Kenya. BradVector ISA + open-source toolchain. Software ships and runs; silicon is designed, not fabricated.",
+   "status": "verified",
+   "note": ""
   },
   {
    "key": "x",
@@ -84,6 +105,6 @@
    "note": "LinkedIn serves an authwall to every logged-out client (HTTP 999 is their block code). There is no way to read this profile from outside, so no avatar and no counts are claimed."
   }
  ],
- "verified": 2,
+ "verified": 3,
  "total": 4
 }

@@ -219,6 +219,7 @@
 <link rel="apple-touch-icon" href="../assets/brad-devices-logos/png/brad-devices-icon-transparent-white-fill-1024px.png">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
@@ -245,6 +246,7 @@
     </nav>
   </div>
 </header>
+<main id="main">
 
 <section class="page-hero">
   <div class="container">
@@ -260,7 +262,7 @@
     <div class="founder-card reveal">
       <div class="founder-avatar"><img src="../assets/founder.jpg" alt="Festus Bradley Nyadimo — founder and chief architect of Brad Devices"></div>
       <div>
-        <h3>Festus Bradley Nyadimo</h3>
+        <h2>Festus Bradley Nyadimo</h2>
         <div class="founder-role">FOUNDER &amp; CHIEF ARCHITECT · AGE 15 · AFRICA</div>
         <p>The industry I looked at was full of walls: Apple's silicon doesn't speak to anyone, NVIDIA's CUDA
         owns the GPUs, Google's Android governs phones, and the fab is a fantasy gate for outsiders.</p>
@@ -414,7 +416,7 @@
     <div class="receipt reveal" style="margin-top:24px;">
       <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg></div>
       <div>
-        <h4>Then I went quiet for eleven months</h4>
+        <h3>Then I went quiet for eleven months</h3>
         <p>No posts. No manifesto. Just building — because I was not interested in adjectives, and I had nothing
         to show anyone except them. The next section is what that silence produced.</p>
         <div class="proof">proof: this page &middot; <a href="https://medium.com/@bradleynyadimo/the-receipts-one-year-later-7fb289051805" target="_blank" rel="noopener">what the silence produced</a>
@@ -435,7 +437,7 @@
       <tbody>
         <tr><td class="mono"><span data-fact="measured.ctest_total">24</span> / <span data-fact="measured.ctest_total">24</span></td><td>ctest suite green — every test is a receipt, not a claim</td></tr>
         <tr><td class="mono">v0.1.0</td><td>tagged release: <span class="mono">braddev</span> + <span class="mono">bradc</span> for linux-x86_64, linux-aarch64 and macos-arm64, 9 artifacts, every one with a SHA-256</td></tr>
-        <tr><td class="mono"><span data-fact="corpus_lines|comma">34,601</span></td><td>lines of reference documentation across those <span data-fact="corpus_docs">137</span> documents, cross-linked and self-consistent</td></tr>
+        <tr><td class="mono"><span data-fact="corpus_lines|comma">34,683</span></td><td>lines of reference documentation across those <span data-fact="corpus_docs">137</span> documents, cross-linked and self-consistent</td></tr>
         <tr><td class="mono"><span data-fact="book_lines|comma">1,737</span></td><td>lines in the unified specification — 41 pages when compiled to PDF</td></tr>
       </tbody>
     </table></div>
@@ -443,7 +445,7 @@
     <div class="receipt reveal" style="margin-top:24px;">
       <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg></div>
       <div>
-        <h4>You can check every line of this</h4>
+        <h3>You can check every line of this</h3>
         <p>The release is public and MIT licensed. Download it, verify the checksum, run the binary. If it does
         not report <span class="mono">v0.1.0</span> and pass its own tests, then I have made a false claim and you
         should say so loudly.</p>
@@ -454,7 +456,7 @@
     <div class="receipt reveal" style="margin-top:14px;">
       <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 2.6v6c0 4.3-2.8 7.4-7 9.4-4.2-2-7-5.1-7-9.4V5.6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></div>
       <div>
-        <h4>What is still not built</h4>
+        <h3>What is still not built</h3>
         <p>No Brad Devices silicon has been fabricated. No processor of mine exists in metal. I have no foundry,
         no fab partner, and no price to quote you. The ISA is <span class="badge gen1">DESIGNED</span>; the toolchain
         <span class="badge live">SHIPPED</span>. That is not a nuance — it is the entire difference, and I would
@@ -474,6 +476,7 @@
   </div>
 </section>
 
+</main>
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -487,7 +490,7 @@
           <p class="mono" style="margin-top:4px;"><a href="https://ke.linkedin.com/in/brad-devices-869a36440" target="_blank" rel="noopener">linkedin.com/in/brad-devices</a></p>
       </div>
       <div>
-        <h5>Explore</h5>
+        <p class="footer-h">Explore</p>
         <ul>
           <li><a href="/achievements">What ships today</a></li>
           <li><a href="/ecosystem">The ecosystem</a></li>
@@ -500,7 +503,7 @@
         </ul>
       </div>
       <div>
-        <h5>Architecture</h5>
+        <p class="footer-h">Architecture</p>
         <ul>
           <li><span class="mono">BGT / BFT / BAT</span> Torox dies</li>
           <li><span class="mono">BradVector</span> ISA</li>
@@ -509,7 +512,7 @@
         </ul>
       </div>
       <div>
-        <h5>Tags</h5>
+        <p class="footer-h">Tags</p>
         <ul>
           <li class="badge live">Software: shipped</li>
           <li class="badge ref">Silicon: designed</li>

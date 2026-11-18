@@ -169,6 +169,7 @@
 <link rel="apple-touch-icon" href="../assets/brad-devices-logos/png/brad-devices-icon-transparent-white-fill-1024px.png">
 </head>
 <body class="page-ecosystem">
+<a class="skip" href="#main">Skip to content</a>
 
 <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
@@ -195,6 +196,7 @@
     </nav>
   </div>
 </header>
+<main id="main">
 
 <section class="page-hero">
   <div class="container">
@@ -211,7 +213,7 @@
     <div class="split">
       <div class="txt reveal">
         <span class="eyebrow">Part 01 · silicon</span>
-        <h3>Processors that share one brain.</h3>
+        <h2>Processors that share one brain.</h3>
         <p><strong>BradChip</strong> fuses CPU, GPU, NPU and the custom BradFusion fabric on a single package.
         <strong>BradXon</strong> is the flagship processor — its Adaptive Neural Fabric adapts the machine to the
         workload by partitioning the die, reconfiguring the NPU dataflow, and steering power and clock. It reallocates
@@ -248,7 +250,7 @@
     <div class="split">
       <div class="txt reveal">
         <span class="eyebrow">Part 02 · the GPU</span>
-        <h3>Every GPU. One instruction set. A "Torox" die name.</h3>
+        <h2>Every GPU. One instruction set. A "Torox" die name.</h3>
         <p>The <strong>BradVector engine</strong> is the shader/compute core at the heart of every Torox GPU —
         from integrated <span class="mono">BFT100</span> to flagship <span class="mono">BGT100</span> to datacenter
         <span class="mono">BAT100</span>. Ray tracing and on-chip AI accelerators sit beside it.</p>
@@ -287,7 +289,7 @@
     <div class="split">
       <div class="txt reveal">
         <span class="eyebrow">Part 03 · memory</span>
-        <h3>The end of "video RAM" vs "system RAM."</h3>
+        <h2>The end of "video RAM" vs "system RAM."</h3>
         <p>BradRAM + SPMP make <strong>one unified memory pool</strong>. The GPU reads and writes it natively on the
         fabric — it is not the guest in someone else's PCIe lane. A controller-side L4 SRAM assistant cache
         keeps AI weights hot, and the GPU's own "Infinity Buffer" is real on-die render SRAM.</p>
@@ -387,6 +389,7 @@
   </div>
 </section>
 
+</main>
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -400,7 +403,7 @@
           <p class="mono" style="margin-top:4px;"><a href="https://ke.linkedin.com/in/brad-devices-869a36440" target="_blank" rel="noopener">linkedin.com/in/brad-devices</a></p>
       </div>
       <div>
-        <h5>Explore</h5>
+        <p class="footer-h">Explore</p>
         <ul>
           <li><a href="/achievements">What ships today</a></li>
           <li><a href="/ecosystem">The ecosystem</a></li>
@@ -414,7 +417,7 @@
         </ul>
       </div>
       <div>
-        <h5>Architecture</h5>
+        <p class="footer-h">Architecture</p>
         <ul>
           <li><span class="mono">BGT / BFT / BAT</span> Torox dies</li>
           <li><span class="mono" title="Brad Devices · the GPU family + ISA + shipped BVRT runtime (PART 02/05)">BradVector</span> ISA</li>
@@ -423,7 +426,7 @@
         </ul>
       </div>
       <div>
-        <h5>Tags</h5>
+        <p class="footer-h">Tags</p>
         <ul>
           <li class="badge live">Software: shipped</li>
           <li class="badge ref">Silicon: designed</li>

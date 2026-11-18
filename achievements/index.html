@@ -236,6 +236,7 @@
 <link rel="apple-touch-icon" href="../assets/brad-devices-logos/png/brad-devices-icon-transparent-white-fill-1024px.png">
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 
 <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
@@ -262,6 +263,7 @@
     </nav>
   </div>
 </header>
+<main id="main">
 
 <section class="page-hero">
   <div class="container">
@@ -294,7 +296,7 @@
     <div class="receipt reveal">
       <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M4 21h16"/></svg></div>
       <div>
-        <h4>Download it <span class="badge live">SHIPPED</span> <span class="badge ref">v0.1.0</span></h4>
+        <h3>Download it <span class="badge live">SHIPPED</span> <span class="badge ref">v0.1.0</span></h3>
         <p>The toolchain is released, not just described. One tag builds
         <span class="mono">braddev</span> and <span class="mono">bradc</span> for linux-x86_64, linux-aarch64 and macos-arm64,
         each with a <span class="mono">.sha256</span> — and the release job refuses to publish unless the full
@@ -306,7 +308,7 @@
     <div class="receipt reveal" style="margin-top:16px;">
       <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6.5 4 12l5 5.5"/><path d="M15 6.5 20 12l-5 5.5"/></svg></div>
       <div>
-        <h4><span class="mono">bradc</span> — the BradVector assembler <span class="badge live">SHIPPED</span></h4>
+        <h3><span class="mono">bradc</span> — the BradVector assembler <span class="badge live">SHIPPED</span></h3>
         <p>Parses my native assembly language (<span class="mono">.basm</span>), validates it, and emits portable
         bytecode (<span class="mono">.bvbc</span>). It rejects bad code with precise, line-level errors — behaviour the
         round-trip bytecode tests pin down.</p>
@@ -317,7 +319,7 @@
     <div class="receipt reveal" style="margin-top:16px;">
       <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 5.5v13l11-6.5L8 5.5z"/></svg></div>
       <div>
-        <h4><span class="mono">BVRT</span> — the interpreter <span class="badge live">SHIPPED</span></h4>
+        <h3><span class="mono">BVRT</span> — the interpreter <span class="badge live">SHIPPED</span></h3>
         <p>A 32-lane SIMT virtual machine that executes <span class="mono">.bvbc</span>. In tests it runs a
         vector saxpy kernel across all 32 lanes and verifies every result — no result left unchecked.</p>
         <div class="proof">proof: bvrt.c · BVRT saxpy ok (32 lanes) · BV_HALT status</div>
@@ -327,7 +329,7 @@
     <div class="receipt reveal" style="margin-top:16px;">
       <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="14" r="5.5"/><path d="M12 8.5V4.8"/><path d="M9.2 6.3 7.6 4.6"/><path d="M14.8 6.3l1.6-1.7"/></svg></div>
       <div>
-        <h4><span class="mono">bradgdb</span> — the debugger <span class="badge live">SHIPPED</span></h4>
+        <h3><span class="mono">bradgdb</span> — the debugger <span class="badge live">SHIPPED</span></h3>
         <p>Attach, set a breakpoint by instruction, inspect registers and the program counter. A debugger for
         an ISA that hasn't seen a wafer yet. When the silicon arrives, this debugger has already been
         exercised for years.</p>
@@ -338,7 +340,7 @@
     <div class="receipt reveal" style="margin-top:16px;">
       <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 16.5 9.5 11l3 3L20 6.5"/><path d="M15 6.5h5v5"/></svg></div>
       <div>
-        <h4><span class="mono">BradTimeline</span> — the profiler <span class="badge live">SHIPPED</span></h4>
+        <h3><span class="mono">BradTimeline</span> — the profiler <span class="badge live">SHIPPED</span></h3>
         <p>A cycle-level trace engine exporting execution timelines to CSV. Your performance toolchain arrives
         before the hardware — performance engineering is a design input here, so it ships first like everything else.</p>
         <div class="proof">proof: bradtimeline.c · timeline.csv export · full instruction trace</div>
@@ -359,7 +361,7 @@
       <div class="receipt">
         <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 2.6v6c0 4.3-2.8 7.4-7 9.4-4.2-2-7-5.1-7-9.4V5.6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></div>
         <div>
-          <h4>M0 — the spatial core <span class="badge live">SHIPPED</span></h4>
+          <h3>M0 — the spatial core <span class="badge live">SHIPPED</span></h3>
           <p>This is the receipt that matters: it used to <em>not exist</em>.
           <span class="mono">bradsense_reconstruct()</span> zero-filled its output buffer and booked performance
           stats on pixels it never computed. It now upscales the frame you hand it — bilinear and
@@ -372,7 +374,7 @@
       <div class="receipt">
         <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M7 15l3.5-4.5 3 2.5L20 6"/></svg></div>
         <div>
-          <h4>The numbers <span class="badge ref">MEASURED</span></h4>
+          <h3>The numbers <span class="badge ref">MEASURED</span></h3>
           <p>2× super-resolution PSNR against ground truth:
           <strong>39.43 dB</strong> bilinear, <strong>39.44 dB</strong> bicubic,
           <strong>39.57 dB</strong> bicubic + sharpen. Asserted in the suite, not asserted here: corners map
@@ -383,7 +385,7 @@
       </div>
       <div class="receipt">
           <div>
-            <h4>M2 — the metrics harness <span class="badge live">SHIPPED</span></h4>
+            <h3>M2 — the metrics harness <span class="badge live">SHIPPED</span></h3>
             <p>The piece that makes every other claim falsifiable. A fixed, procedurally generated corpus — no
             stored assets, so a diff always means a code change — run through the upscaler at every quality mode,
             reporting <strong>PSNR</strong>, <strong>SSIM</strong> as both a mean and a worst window, and a
@@ -399,7 +401,7 @@
         </div>
         <div class="receipt">
           <div>
-            <h4>M1 — the temporal core <span class="badge live">SHIPPED</span></h4>
+            <h3>M1 — the temporal core <span class="badge live">SHIPPED</span></h3>
             <p>An accumulated history at output resolution, reprojected by supplied motion vectors, with the history
             clamped to the current frame's own neighbourhood and its weight discounted where it disagrees. That clamp
             is the anti-ghosting mechanism, and it is verified by removing it: with the clamp deleted the test fails
@@ -409,7 +411,7 @@
         </div>
         <div class="receipt">
           <div>
-            <h4>M3, M4 — queued, not shipped <span class="badge vision">THE ROAD AHEAD</span></h4>
+            <h3>M3, M4 — queued, not shipped <span class="badge vision">THE ROAD AHEAD</span></h3>
             <p><strong>M3</strong> expressing the temporal core as BradVector kernels — the first proof this ISA can
             carry the pipeline the Neuro-Stream units will eventually accelerate. <strong>M4</strong> the trained
             per-object semantic experts. <em>None of these are claimed as working.</em> Frame generation is
@@ -420,7 +422,7 @@
         <div class="receipt">
         <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18"/><path d="M5 8h14"/><path d="M5 16h14"/></svg></div>
         <div>
-          <h4>Where the argument honestly is <span class="badge ref">THE CLAIM</span></h4>
+          <h3>Where the argument honestly is <span class="badge ref">THE CLAIM</span></h3>
           <p>"We use AI to upscale" is the floor, not the differentiator — FSR 4, DLSS 4 and XeSS 2 are all
           machine-learned, and pretending otherwise would be the kind of lie this site does not tell. The claim
           worth making is the <em>object-aware semantic pipeline</em>: geometry and object identity feeding the
@@ -445,7 +447,7 @@
       <div class="receipt">
         <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5.5C10 3.8 6.5 3.8 4 4.5v14c2.5-.7 6-.7 8 1 2-1.7 5.5-1.7 8-1v-14C17.5 3.8 14 3.8 12 5.5z"/><path d="M12 5.5v14"/></svg></div>
         <div>
-          <h4>The unified specification <span class="badge ref">ON DISK</span></h4>
+          <h3>The unified specification <span class="badge ref">ON DISK</span></h3>
           <p>1,737 lines covering the whole ecosystem — chips, GPUs, memory, OS, software, console, roadmap —
           with honest Gen 1 / Gen 2 / Vision tagging throughout.</p>
           <div class="proof">BRAD_DEVICES_COMPLETE_SPEC.md · <a href="/assets/BRAD_DEVICES_COMPLETE_SPEC.pdf">41-page PDF build</a></div>
@@ -454,7 +456,7 @@
       <div class="receipt">
         <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="5.5"/><path d="M15.5 15.5 20 20"/></svg></div>
         <div>
-          <h4>137 documents <span class="badge ref">ON DISK</span></h4>
+          <h3>137 documents <span class="badge ref">ON DISK</span></h3>
           <p>Every subsystem has its own deep-dive: BradVector ISA, GPU architecture, memory model, register
           maps, driver guides, OS design.</p>
           <div class="proof">Design tree — silicon · software · devices</div>
@@ -463,7 +465,7 @@
       <div class="receipt">
         <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/></svg></div>
         <div>
-          <h4>A naming language <span class="badge ref">ON DISK</span></h4>
+          <h3>A naming language <span class="badge ref">ON DISK</span></h3>
           <p>Die names carry meaning: discrete <span class="mono">BGT100</span> (BradGfx), integrated
           <span class="mono">BFT100</span> (BradFx), datacenter <span class="mono">BAT100</span> (BradApex) —
           the generation in the number, the tier in the suffix.</p>
@@ -473,7 +475,7 @@
       <div class="receipt">
         <div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 2.6v6c0 4.3-2.8 7.4-7 9.4-4.2-2-7-5.1-7-9.4V5.6z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></div>
         <div>
-          <h4>Every claim carries a tag <span class="badge vision">BY DESIGN</span></h4>
+          <h3>Every claim carries a tag <span class="badge vision">BY DESIGN</span></h3>
           <p>Shipped, designed, or vision — three tags, no invented benchmarks, no pretend silicon. A tag
           states exactly what the file can prove today.</p>
           <div class="proof">gen1 / gen2 / vision tags across all 84 docs</div>
@@ -494,6 +496,7 @@
   </div>
 </section>
 
+</main>
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
@@ -507,7 +510,7 @@
           <p class="mono" style="margin-top:4px;"><a href="https://ke.linkedin.com/in/brad-devices-869a36440" target="_blank" rel="noopener">linkedin.com/in/brad-devices</a></p>
       </div>
       <div>
-        <h5>Explore</h5>
+        <p class="footer-h">Explore</p>
         <ul>
           <li><a href="/achievements">What ships today</a></li>
           <li><a href="/ecosystem">The ecosystem</a></li>
@@ -520,7 +523,7 @@
         </ul>
       </div>
       <div>
-        <h5>Architecture</h5>
+        <p class="footer-h">Architecture</p>
         <ul>
           <li><span class="mono">BGT / BFT / BAT</span> Torox dies</li>
           <li><span class="mono" title="Brad Devices · the GPU family + ISA + shipped BVRT runtime (PART 02/05)">BradVector</span> ISA</li>
@@ -529,7 +532,7 @@
         </ul>
       </div>
       <div>
-        <h5>Tags</h5>
+        <p class="footer-h">Tags</p>
         <ul>
           <li class="badge live">Software: shipped</li>
           <li class="badge ref">Silicon: designed</li>

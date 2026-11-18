@@ -182,7 +182,7 @@
       what is <em>moving</em> — derived from the repository by the build
       itself, never typed by hand. If a stream stalls, the page is required
       to say so.</p>
-      <div class="proof">rendered from <code>921a9ba</code> at build time
+      <div class="proof">rendered from <code>173329a</code> at build time
         &middot; <a class="plain" href="/achievements">what ships today</a>
         &middot; <a class="plain" href="/journal">where it started</a></div>
     </div>
@@ -192,73 +192,73 @@
       <div class="grid">
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>BradISA V2 in RTL — the Falcon decoder</h3>
+      <h2>BradISA V2 in RTL — the Falcon decoder</h2>
       <p>All 64 opcode slots decoded in RTL: 50 assigned across seven formats, 14 reserved and raising undef. The coverage testbench feeds every slot and is green. Simulation-verified; no FPGA bitstream yet.</p>
       <div class="now-meta">last movement 2026-11-04 &middot; <a class="plain" href="https://github.com/Brad-Devices">the RTL, on GitHub</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>BradISA V2 execute stage — the Falcon pipeline</h3>
+      <h2>BradISA V2 execute stage — the Falcon pipeline</h2>
       <p>ALU, immediates, loads and stores, branches, CALL/RET/JALR, and the forwarding that removes stalls. 60 execution checks on hand-encoded V2 programs, zero errors; undefined opcodes and divide-by-zero raise the fault line. Verilog only — the VHDL tree is still V1.</p>
       <div class="now-meta">last movement 2026-11-04 &middot; <a class="plain" href="https://github.com/Brad-Devices">the RTL, on GitHub</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>BradISA V2 assembler — table-driven, ABI-aligned</h3>
+      <h2>BradISA V2 assembler — table-driven, ABI-aligned</h2>
       <p>The V1 assembler is retired. The V2 one is two-pass and table-driven: 50 mnemonics, seven formats, ABI register names, labels, data directives. A new ISA drift gate compares the Verilog package, the C header and the assembler table, so the RTL and the toolchain cannot silently disagree. RET is 0xB8000000 and the link register is r15, matching the published ABI.</p>
       <div class="now-meta">last movement 2026-11-04 &middot; <a class="plain" href="https://github.com/Brad-Devices">the assembler, on GitHub</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>bradc-mini — the C-subset compiler that runs its own output</h3>
+      <h2>bradc-mini — the C-subset compiler that runs its own output</h2>
       <p>A TCC-class compiler for BradISA V2: int/void, functions with up to 8 arguments, locals, if/else, while, globals, arrays, pointers and int-field structs. A new in-process V2 emulator executes the emitted code in ctest, so add(3,4)=7, sum(10)=45 and the combined aggregate test are checked end-to-end, not just assembled.</p>
       <div class="now-meta">last movement 2026-11-05 &middot; <a class="plain" href="https://github.com/Brad-Devices">the compiler, on GitHub</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>The 64-slot decode-coverage gate</h3>
+      <h2>The 64-slot decode-coverage gate</h2>
       <p>A testbench that feeds every one of the 64 opcode values and fails unless the 50 assigned slots decode with the right format and the 14 reserved slots trap. Wired into CI through tools/check_rtl.py, alongside the execution testbench.</p>
       <div class="now-meta">last movement 2026-11-03 &middot; <a class="plain" href="https://github.com/Brad-Devices">the gate, on GitHub</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>BradVector compiler — the vertical slice</h3>
+      <h2>BradVector compiler — the vertical slice</h2>
       <p>PTX-text in, .bvbc out, nine kernels run lane-by-lane on BVRT, the full ctest suite green. Rung 1 lowers 64-bit loads and stores to two 32-bit accesses with a run-time 8-byte alignment check. Cubin, 64-bit ALU, atomics, doubles and predicated 64-bit accesses remain honestly unsupported.</p>
       <div class="now-meta">last movement 2026-11-04 &middot; <a class="plain" href="https://github.com/Brad-Devices">the brad-cvt source, on GitHub</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-designed">DESIGNED</span></div>
-      <h3>BradKernel — ABI, trap entry and the boot seed</h3>
+      <h2>BradKernel — ABI, trap entry and the boot seed</h2>
       <p>The second reconciliation pass wrote the V2 scalar ABI, the trap-entry sequence, the boot/schedule/switch seed, the CVT next-rung plan and the blocked register. The seed is designed and simulated on V1 — boot, a software-injected trap, syscall routing, context switch and a round-robin scheduler — while preemption, ECALL and the timer remain VISION because V2 assigns no ECALL opcode and the RTL has no exception logic. C10 (threads per Torox cluster) and R10 (Torox fault path) stay blocked pending the Architect.</p>
       <div class="now-meta">last movement 2026-11-05 &middot; <a class="plain" href="https://github.com/Brad-Devices">the kernel docs, on GitHub</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>BradSense-Renderer — spatial (M0), temporal (M1) and metrics (M2)</h3>
+      <h2>BradSense-Renderer — spatial (M0), temporal (M1) and metrics (M2)</h2>
       <p>Three milestones ship: the spatial core, the temporal core, and the metrics harness with golden diffs that keep the numbers honest. All public and receipted. The real-resolution corpus and M3–M4 stay open; what comes next in the pipeline stays moat.</p>
       <div class="now-meta">last movement 2026-11-05 &middot; <a class="plain" href="/achievements">what ships today</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>The corporate folder, assessed and updated</h3>
+      <h2>The corporate folder, assessed and updated</h2>
       <p>A deep audit of every governance document: the IP registry corrected to the shipped ISA spec, an index and audit record added. Two decisions were carried to the founder — the equity plan&#x27;s calendar years (F7) and the five unbounded questions in EXCELLENCE_STRATEGY (F8) — and both are still pending.</p>
       <div class="now-meta">last movement 2026-11-14 &middot; <a class="plain" href="https://github.com/Brad-Devices">the governance docs, on GitHub</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>This site — one motion stack</h3>
+      <h2>This site — one motion stack</h2>
       <p>One motion engine where there were two: GSAP + ScrollTrigger + Lenis replaced the retired Motion One — vendored, hash-gated, reduced-motion-safe, no-JS-readable. Every reading page loads it; the deck is deliberately self-contained.</p>
       <div class="now-meta">last movement 2026-11-17 &middot; <a class="plain" href="/">start from the front page</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>BradUI reference compositor — the first pixels</h3>
+      <h2>BradUI reference compositor — the first pixels</h2>
       <p>A host-side reference compositor renders a 360x720 frame from the generated design tokens and checks itself: five checks, five passes. Damage is pixel-identical to a full repaint, a covered surface is skipped rather than rasterized (31,488 px), and three sampled pixels equal their tokens exactly. The checks found three bugs in the renderer itself -- inverted compositing order, bounding-box occlusion that hid a visible card, and a border band that selected the interior because the signed distance is negative inside a shape. 20.2 ms full repaint, 3.0 ms for one damaged region: a measurement of the reference path, not a claim about the product path.</p>
       <div class="now-meta">last movement 2026-11-16 &middot; <a class="plain" href="https://brad-devices.vercel.app/now/">the workbench</a></div>
     </article>
     <article class="card now-card">
       <div class="now-badges"><span class="now-badge now-shipped">SHIPPED</span></div>
-      <h3>Bradium — the design system, generated</h3>
+      <h2>Bradium — the design system, generated</h2>
       <p>193 tokens compiled into 237 properties across two themes (dark-matter and light-matter), from one canonical source. The committed builds are verified by regenerating them in memory, so a stale build is a refusal rather than a note. The preview may only use generated tokens or declared preview-locals, and no colour literals at all.</p>
       <div class="now-meta">last movement 2026-11-16 &middot; <a class="plain" href="https://brad-devices.vercel.app/now/">the workbench</a></div>
     </article></div>
@@ -270,14 +270,14 @@
       <p>The tail of the real commit log — the work as it happened, newest
       first. The full log is the repository.</p>
       <ul class="now-log">
+      <li><code>173329a</code> <span>2026-11-18</span> the workbench names the merge, and the GitHub org stops being unreachable</li>
+      <li><code>23d4d31</code> <span>2026-11-18</span> the site gets one shell, one type ladder, and every essay on the property</li>
+      <li><code>ea1cd2f</code> <span>2026-11-18</span> the essays stop living on Medium - 23 pages, a reading surface, and the archive exemption that keeps</li>
+      <li><code>92f9911</code> <span>2026-11-18</span> the doors share one shell, and a heading stops being whatever the browser defaults to - six defects,</li>
+      <li><code>c41b3f2</code> <span>2026-11-18</span> the site stops being a second palette, and gets a design guideline to say so - site/DESIGN.md is ado</li>
+      <li><code>5a5f95c</code> <span>2026-11-18</span> the site stops being a second palette and gets its own design guideline - site/DESIGN.md is adopted </li>
       <li><code>921a9ba</code> <span>2026-11-18</span> the repair block, corrected: &#x27;that list&#x27;, done by hand because the proxy throttled</li>
       <li><code>c30440e</code> <span>2026-11-18</span> the repair block points at a list, because Medium has no tables</li>
-      <li><code>5cb5af9</code> <span>2026-11-18</span> the pages hook stops piping through cut, because a write error there killed a deploy</li>
-      <li><code>c5f3e7f</code> <span>2026-11-17</span> ledger receipt: the essay went out at half its length, and the verifier now exists</li>
-      <li><code>db5a1a2</code> <span>2026-11-17</span> the essay published at 676 of 1,418 words, and nothing noticed</li>
-      <li><code>354f549</code> <span>2026-11-17</span> facts re-baked into the two pages the ledger edit moved</li>
-      <li><code>2124073</code> <span>2026-11-17</span> ledger receipt: the second door, and the slash that inverts between hosts</li>
-      <li><code>4e7098c</code> <span>2026-11-17</span> the site gets a second door, because Medium stopped accepting the first one</li>
       </ul>
       <div class="sfacts">
         <div class="sfact"><span class="sfact-v">137</span><span class="sfact-k">documents in the corpus</span></div>
@@ -300,7 +300,7 @@
           <p class="mono" style="margin-top:4px;"><a href="https://ke.linkedin.com/in/brad-devices-869a36440" target="_blank" rel="noopener">linkedin.com/in/brad-devices</a></p>
       </div>
       <div>
-        <h5>Explore</h5>
+        <p class="footer-h">Explore</p>
         <ul>
           <li><a href="/achievements">What ships today</a></li>
           <li><a href="/ecosystem">The ecosystem</a></li>
@@ -313,7 +313,7 @@
         </ul>
       </div>
       <div>
-        <h5>Architecture</h5>
+        <p class="footer-h">Architecture</p>
         <ul>
           <li><span class="mono">BGT / BFT / BAT</span> Torox dies</li>
           <li><span class="mono">BradVector</span> ISA</li>
@@ -322,7 +322,7 @@
         </ul>
       </div>
       <div>
-        <h5>Tags</h5>
+        <p class="footer-h">Tags</p>
         <ul>
           <li class="badge live">Software: shipped</li>
           <li class="badge ref">Silicon: designed</li>

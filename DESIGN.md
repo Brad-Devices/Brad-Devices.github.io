@@ -163,21 +163,36 @@ with `.16em` tracking. Prose is never mono. Receipts are never sans.
 | `--text-2xs` | 11px | badge and chip labels |
 | `--text-xs` | 12px | kickers, mono meta, table headers |
 | `--text-sm` | 13px | card meta, timeline rows, captions |
-| `--text-md` | 15px | buttons, nav, UI copy |
-| `--text-base` | 1.06rem (17px) | ledes, long-form body |
-| `--text-lg` | 1.25rem (20px) | sub-heads, pull quotes |
-| `--text-xl` | `clamp(1.8rem, 4vw, 2.7rem)` | section `h2` |
+| `--text-md` | 15px | buttons, nav, UI copy, card body |
+| `--text-base` | 1.06rem (17px) | ledes, long-form body, card titles |
+| `--text-lead` | `clamp(1.05rem, 2vw, 1.35rem)` | hero and page subheads |
+| `--text-lg` | 1.25rem (20px) | card, pillar and post titles |
+| `--text-xl` | 1.5rem (24px) | split-section heads, the founder name |
+| `--text-quote` | `clamp(1.2rem, 2.6vw, 1.7rem)` | pull quotes |
+| `--text-figure` | `clamp(1.5rem, 3vw, 2rem)` | hero figures |
+| `--text-2xl` | `clamp(1.8rem, 4vw, 2.7rem)` | section `h2`, stat walls |
+| `--text-3xl` | `clamp(2.2rem, 5.5vw, 3.6rem)` | page `h1` |
 | `--text-hero` | `clamp(2.6rem, 7.2vw, 5.2rem)` | the home `h1` |
+| `--text-rel-sm` | `.9em` | a step down inside a component |
+| `--text-rel-xs` | `.8em` | micro marks: the outbound arrow, a suffix |
 
 Headlines track tight (`-.02em` to `-.035em`); body does not. Prose measure is
 **62–74ch**, and ledes cap at **720px**. A line longer than 78ch is a layout
 bug, not a taste.
 
-**Honest status:** the stylesheet still carries **26 distinct font sizes** —
-`.68rem` through `1.6rem` — many within 1–2px of each other. The ladder above is
-Normative; its adoption is §9.1. Until then, the rule is: any rule you touch
-moves to the nearest ladder step, and a deliberate deviation keeps a comment
-saying why.
+**Outline level and display size are separate decisions.** `h3` and `h4` carry
+base rules (`--text-lg` and `--text-md`) so a heading no longer resolves to the
+browser default just because no component rule claims it. A card title can be an
+`h2` and still set at `--text-lg` when the outline needs it to be a section and
+the layout needs it to be small. Before this, the same tag changed size
+depending on which container it landed in, which is how twelve doors ended up
+with heading outlines that skipped a level.
+
+**Honest status: adopted.** 98 of 100 `font-size` declarations resolve from the
+ladder; the two exceptions are the terminal banner (7.5px, because the block
+mark is sized to fit the phone terminal frame and a ladder step wraps the art)
+and one `inherit`. `tools/check_site_css.py` refuses a new raw size that has no
+argued exception.
 
 ---
 
@@ -189,10 +204,16 @@ ambition.
 
 | Token | Value | Role |
 |---|---|---|
+| `--space-1` | 4px | hairline pairs, icon nudges |
+| `--space-2` | 8px | label to value |
+| `--space-3` | 12px | inside a control |
+| `--space-4` | 16px | paragraph rhythm |
+| `--space-6` | 24px | card padding, gutter |
+| `--space-8` | 32px | block separation |
+| `--space-12` | 48px | sub-section rhythm |
+| `--space-16` | 64px | section rhythm ≤720px |
+| `--space-24` | 96px | section rhythm desktop |
 | container | 1160px | `.container` max width |
-| gutter | 24px | horizontal page padding |
-| section rhythm | 96px desktop / 64px ≤720px | `.section` |
-| card padding | 24–32px | `.card`, `.stat`, `.receipt` |
 | radii | 6px / 8px / 10px | inner / control / panel |
 
 Breakpoints are **560 / 720 / 1000** and nothing else. A fourth breakpoint is a
@@ -201,6 +222,13 @@ symptom: the component is trying to do two jobs.
 Grid: 12 columns conceptually, expressed as `.grid-2 / .grid-3 / .grid-4` — one
 set of gaps, one collapse rule per breakpoint. Cards do not invent their own
 column behaviour.
+
+**Honest status: partially adopted, deliberately.** 52 declarations already on
+the grid now resolve from `--space-*`, which changes no pixel. **129 off-grid
+values remain** (20px, 18px, 14px, 26px, 70px…), and they are *not* rounded
+here, because rounding a margin is a layout change and no browser has looked at
+this page since the token landed. They are listed in §11 as a visual pass with
+a phone in hand, not as a mechanical sweep.
 
 ---
 
@@ -280,13 +308,61 @@ Contract:
   deploy. Banned vocabulary never reaches a door, no matter how good the
   sentence.
 
+### 8.1 The reading surface
+
+Long-form prose is the one content type the site did not set. Essays lived on
+Medium, in Medium's typography, behind Medium's sign-up prompt, and `/journal`
+was a directory of 163 exits. They render here now, from the markdown in
+`Medium/`, by `tools/gen_essays.py`.
+
+| Rule | Value |
+|---|---|
+| Measure | 680px container, ~72 characters at `--text-base` |
+| Body | `--text-base` / 1.75 line height — the step §3 builds for it |
+| Section heads | `--text-xl`, `--space-12` above, `--space-3` below |
+| Pull quotes | `--text-lg`, gold left rule, never centred |
+| Links | underlined, offset 3px, gold on hover; never distinguished by colour alone |
+| Code and receipts | mono, `--text-rel-sm`, on `--orbit-black-3` |
+| Tables | `--text-sm`, wrapping cells — the site's `nowrap` default is for indexes, not prose |
+
+**Two URLs, and the difference is a claim.** `/journal/<slug>` is current copy.
+`/journal/archive/<slug>` is a verbatim 2025 transcript, and it says so in a
+banner with its publication date and era, because a reader arriving from a search
+engine must know what they are holding. The archive path is also what keeps the
+voice exemption honest: `tools/check_voice.py` skips `archive/` because prose
+published a year ago cannot be re-edited, and that reasoning applies to the
+rendered page exactly as it applies to the source file.
+
+**Canonical points at Medium.** Medium published first, so Medium is the
+original and the page here says so, in `<link rel="canonical">` and in
+`isBasedOn`. This is not modesty — it is the only honest option while the
+property is younger than the platform. When the site is the stronger host, the
+canonical moves home; it is one line in one generator, and it moves when the
+evidence says so, not when the mood does.
+
+**Platform furniture is stripped, prose is not.** The 2025 files are flattened
+`r.jina.ai` captures, so they arrive with "Press enter or click to view image in
+full size", a byline avatar, "2 min read", the sign-up prompt and bare `--`
+separators. Those come out, from a list where each entry says why. Sentences
+never do: `Medium/README.md` is explicit that corrections belong in a new essay,
+and a renderer that starts tidying prose has started editing the record. If a
+strip target survives, the generator warns rather than shipping it.
+
 ---
 
 ## 9. Adoption ledger — what this document still owes
 
-1. **Type ladder adoption** (§3): 26 sizes → 8 steps. Mechanical, page by page,
-   with a before/after screenshot per door. Nothing else in this list starts
-   until it does, because every later layout change rides on it.
+1. ~~**Type ladder adoption** (§3): 26 sizes → 8 steps.~~ **Done, 18 Nov
+   2026.** 98 of 100 declarations resolve from `--text-*`, `h3`/`h4` have base
+   rules, and the CSS gate refuses a new raw size without an argued exception.
+1a. **Space ladder adoption** (§4): the 129 off-grid spacing values want a
+   visual pass on a phone, not a script. Round, look, keep or revert.
+1b. ~~**Reading surface** (§8): essays render on the property, not only on
+   Medium.~~ **Done, 18 Nov 2026.** 23 essays render at `/journal/<slug>` and
+   `/journal/archive/<slug>`; the journal cards link inward; word counts and
+   read times are measured on the text the site sets. Canonical still points at
+   Medium (see §8.1) — that is the one deliberate open question, and it closes
+   when the property outranks the platform, not before.
 2. **Docs index, desktop** — 135+ rows in one column. Group nav + two columns +
    sticky group headings at ≥1000px. Phone is already fine.
 3. **Door-header pattern** — one component, applied to all fourteen doors.
@@ -312,6 +388,9 @@ Contract:
 | The token source itself is valid, contrast measured | `src/bradium/tools/validate_tokens.py` |
 | Every door's links resolve | `tools/check_site_links.py` |
 | One ASCII mark, every consumer | `tools/check_ascii.py` |
+| One shell: skip link, `<main>`, one `h1`, no skipped heading levels | `tools/pageshell.py` |
+| Every essay renders, none has drifted, no orphan page | `tools/gen_essays.py --check` |
+| Type resolves from the ladder | `tools/check_site_css.py` |
 | The doc index is current | `tools/gen_doc_index.py --check` |
 | Counts are current everywhere they are quoted | `tools/gen_facts.py --check` |
 | Voice and publication vocabulary | `tools/check_voice.py`, `tools/check_publication_trigger.py` |
@@ -329,8 +408,11 @@ All of them run in `tools/build_site.sh` and `tools/run_gates.sh`.
    on the light side.
 3. **The deck's `--line` measures 1.82:1** on Orbit Black. It is a decorative
    hairline between slides, but it is also the only separator the deck has.
-4. **26 ad-hoc font sizes** (§3) — the ladder is normative, the CSS has not
-   adopted it yet.
+4. **129 off-grid spacing values** (§4) remain after the type ladder landed.
+   They are 1–4px from the nearest step, so they are a visual pass, not a
+   correctness bug — and they are why this document does not claim the 8pt
+   grid is adopted, only that the grid is defined and the on-grid values use
+   it.
 5. **The docs index is one column** at every width (§9.2).
 6. **Door headers improvise** — `h1` sizes and lede measures vary between
    doors (§9.3).
