@@ -47,7 +47,7 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 996,
+   "lines": 1051,
    "group": "The book and the ledgers",
    "group_key": "(root)"
   },
@@ -57,7 +57,7 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 421,
+   "lines": 422,
    "group": "The book and the ledgers",
    "group_key": "(root)"
   },
@@ -97,7 +97,7 @@
    "state": "RECORD",
    "state_class": "gen2",
    "declared": "READ COMPLETE for the delta (16 Nov 2026). Git state at read time: clean",
-   "lines": 1197,
+   "lines": 1209,
    "group": "The book and the ledgers",
    "group_key": "(root)"
   },
@@ -927,7 +927,7 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 906,
+   "lines": 914,
    "group": "Software — OS, services, drivers, the interface",
    "group_key": "Brad Software/"
   },
@@ -1250,6 +1250,16 @@
    "lines": 269,
    "group": "Press and applications",
    "group_key": "press/"
+  },
+  {
+   "path": "site/DESIGN.md",
+   "title": "SITE DESIGN — the Brad Devices site's own design guideline",
+   "state": "POLICY",
+   "state_class": "gen2",
+   "declared": "POLICY — adopted 2026-11-17",
+   "lines": 354,
+   "group": "Site",
+   "group_key": "site/"
   },
   {
    "path": "site/vendor/MANIFEST.md",

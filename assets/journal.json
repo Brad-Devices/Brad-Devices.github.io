@@ -1,8 +1,8 @@
 {
  "profile": "https://medium.com/@bradleynyadimo",
- "count": 22,
+ "count": 23,
  "first": "2025-08-06",
- "last": "2026-10-07",
+ "last": "2026-11-17",
  "source": "seed list (Medium/seed-urls.tsv) + profile RSS, post markdown via r.jina.ai",
  "enumeration": "SEEDED, NOT EXHAUSTIVE",
  "enumeration_note": "Medium's profile RSS returns only the ten most recent posts and the rendered profile page paginates at ten, so no complete index exists to enumerate from. This list is what is known -- 22 posts assembled from the RSS, a rendered profile fetch, seven URLs supplied by the Architect, and two site-scoped searches. Further posts may exist. Do not describe this count as complete.",
@@ -292,6 +292,19 @@
    "read_min": 3,
    "words": 671,
    "published_utc": "2026-10-07T01:54:15Z"
+  },
+  {
+   "date": "2026-11-17",
+   "phase": "archive",
+   "blurb": "",
+   "slug": "the-first-pixels-of-brados",
+   "title": "The First Pixels of BradOS",
+   "url": "https://medium.com/@bradleynyadimo/the-first-pixels-of-brados-5cf5d5a237ef",
+   "id": "5cf5d5a237ef",
+   "cover": "https://miro.medium.com/v2/resize:fit:700/1*n4QeneRpfOyhjQ_YBQkTog.png",
+   "read_min": 3,
+   "words": 682,
+   "published_utc": "2026-11-17T23:19:17Z"
   }
  ]
 }

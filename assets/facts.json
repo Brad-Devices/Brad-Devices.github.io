@@ -1,12 +1,12 @@
 {
   "book_lines": 1737,
-  "corpus_docs": 136,
-  "corpus_lines": 34171,
-  "corpus_lines_floor100": 34100,
-  "corpus_lines_with_archive": 35063,
-  "generated_utc": "2026-11-17T23:32:24Z",
+  "corpus_docs": 137,
+  "corpus_lines": 34601,
+  "corpus_lines_floor100": 34600,
+  "corpus_lines_with_archive": 35493,
+  "generated_utc": "2026-11-18T00:31:19Z",
   "glossary_names": 119,
-  "journal_posts": 22,
+  "journal_posts": 23,
   "journal_posts_2025": 21,
   "measured": {
     "ctest_status": "listed",
