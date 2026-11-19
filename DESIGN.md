@@ -307,6 +307,12 @@ Contract:
 - **Voice is a gate.** `VOICE.md` + `tools/check_voice.py` runs before every
   deploy. Banned vocabulary never reaches a door, no matter how good the
   sentence.
+- **A figure is a picture of a document, not a receipt for hardware.** The
+  diagrams under `site/assets/diagrams/` are 220-dpi exports of the TikZ in the
+  branded spec PDFs. Every one that ships carries its claim tag and names the
+  PDF it came from. A stage diagram of a designed ray pipeline is `VISION`
+  until hardware exists; a VSET lane diagram of the Kinetic CPU extension is
+  BradISA and must say so, because Torox uses a different vector file.
 
 ### 8.1 The reading surface
 

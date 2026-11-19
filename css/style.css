@@ -1459,6 +1459,22 @@ html.has-lenis { scroll-behavior: auto !important; }
 }
 .essay-nav-title { font-size: var(--text-sm); color: var(--orbit-text); line-height: 1.4; }
 
+/* ---------- Spec figures: the four diagrams that were drawn but never shown ----------
+   These are exports of the TikZ in the branded PDFs, so a figure here is a
+   picture of a document, not a photograph of hardware. Every caption carries
+   the claim's status for that reason. No new size or spacing value: everything
+   resolves from the ladder and scale the rest of the site uses. */
+.spec-figure { margin: 0; }
+.spec-figure img {
+  width: 100%; height: auto; display: block;
+  border: 1px solid var(--orbit-border);
+  border-radius: var(--radius-sm); background: var(--orbit-black-3);
+}
+.spec-figure figcaption { padding-top: var(--space-4); }
+.spec-figure figcaption h3 { display: flex; align-items: center; flex-wrap: wrap; gap: var(--space-2); }
+.spec-figure figcaption p { margin-top: var(--space-2); }
+.spec-figure .proof { margin-top: var(--space-3); }
+
 @media (max-width: 560px) {
   .essay-nav { grid-template-columns: 1fr; }
   .essay-nav-empty { display: none; }

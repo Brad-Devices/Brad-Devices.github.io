@@ -270,6 +270,63 @@
       <div class="card"><img src="../assets/diagrams/ncc_topology.png" alt="NCC cluster topology" style="width:100%;height:auto;border-radius:6px;display:block;"><p style="margin-top:10px;"><strong>NPU topology.</strong> The 2×4 NCC mesh, HB-AIM, scheduler and fabric — §3.2 of the book.</p></div>
       <div class="card"><img src="../assets/diagrams/bradram_spmp.png" alt="BradRAM + SPMP memory architecture" style="width:100%;height:auto;border-radius:6px;display:block;"><p style="margin-top:10px;"><strong>Memory.</strong> BradRAM + SPMP — the two-tier unified pool, §4.1 of the book.</p></div>
     </div>
+
+    <div class="reveal" style="margin-top:48px;">
+      <p class="eyebrow">FROM THE SAME TIKZ SOURCES</p>
+      <h2>Four figures that were drawn and never shown.</h2>
+      <p class="lede" style="max-width:70ch;">Each of these is exported from a spec PDF, at the same size and in the same
+      gold-dark language as the figures above. A picture of a design is not a receipt for hardware, so every
+      caption carries its status and the document it came from.</p>
+    </div>
+
+    <div class="grid grid-2 reveal" style="margin-top:24px;">
+      <figure class="card spec-figure">
+        <img src="../assets/diagrams/memory_map_bands.png" alt="Six address bands of the BradXon Gen 1 platform, from 0x00000000 to 0xFFFFFFFF" loading="lazy" width="1357" height="704">
+        <figcaption>
+          <h3>BradXon address bands <span class="badge ref">DESIGNED</span></h3>
+          <p>The Gen 1 platform address space: boot ROM and system RAM, page tables and kernel image, core and
+          fabric MMIO, then two DRAM windows. The bands are not to scale — the table in the PDF gives the exact
+          spans.</p>
+          <div class="proof">from <a class="plain" href="/assets/specs/bradxon_platform.pdf">bradxon_platform.pdf</a>
+            &middot; a platform design, not a part</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card spec-figure">
+        <img src="../assets/diagrams/vset_lane_layout.png" alt="VSET lane widths: 32 int8 lanes, 16 int16 or FP16 lanes, 8 int32 or FP32 lanes across 256 bits" loading="lazy" width="1168" height="290">
+        <figcaption>
+          <h3>VSET lanes — the CPU vector file <span class="badge ref">DESIGNED</span></h3>
+          <p>SEW sets the lane width across 32 × 256-bit registers: 32 int8 lanes, 16 int16/FP16, 8 int32/FP32.
+          This is the <strong>Kinetic CPU</strong> vector extension. Torox GPUs carry a different file — 64 ×
+          512-bit, 16 lanes — and run BradVector, never BradISA. They share memory, not instructions.</p>
+          <div class="proof">from <a class="plain" href="/assets/specs/bradisa_v2_ext.pdf">bradisa_v2_ext.pdf</a>
+            &middot; not the GPU vector file</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card spec-figure">
+        <img src="../assets/diagrams/gpu_ns_pipeline.png" alt="Six-stage neural super-resolution pipeline from low-resolution frame to high-resolution pixel" loading="lazy" width="1369" height="989">
+        <figcaption>
+          <h3>BradSense-Render — the full path <span class="badge vision">VISION</span></h3>
+          <p>Low-resolution frame, feature extraction, temporal accumulation, an MLP upscaler, optional frame
+          generation, output. The M0 spatial core is <strong>SHIPPED</strong> — but only in software, and only
+          for the spatial stages. The temporal core and frame generation are queued.</p>
+          <div class="proof">from <a class="plain" href="/assets/specs/bradgfx_arch.pdf">bradgfx_arch.pdf</a>
+            &middot; M0 shipped, M1–M4 queued</div>
+        </figcaption>
+      </figure>
+
+      <figure class="card spec-figure">
+        <img src="../assets/diagrams/gpu_rt_pipeline.png" alt="Six-stage BradGfx ray tracing pipeline from ray setup to result writeback" loading="lazy" width="1369" height="1053">
+        <figcaption>
+          <h3>BradGfx ray tracing <span class="badge vision">VISION</span></h3>
+          <p>Ray setup, BVH traversal, primitive intersection, the programmable ray pipeline, optional NeRF
+          evaluation and result writeback — the designed path. No RTU or IPU hardware has shipped.</p>
+          <div class="proof">from <a class="plain" href="/assets/specs/bradgfx_arch.pdf">bradgfx_arch.pdf</a>
+            &middot; designed, not fabricated</div>
+        </figcaption>
+      </figure>
+    </div>
   </div>
 </section>
 
@@ -1220,7 +1277,7 @@
         <td class="doc-index-title">SITE DESIGN — the Brad Devices site&#x27;s own design guideline</td>
         <td class="mono doc-index-path">site/DESIGN.md</td>
         <td class="doc-index-state"><span class="badge gen2">POLICY</span> <span class="doc-index-declared">POLICY — adopted 2026-11-17</span></td>
-        <td class="num">436</td>
+        <td class="num">442</td>
       </tr>
       <tr data-path="site/vendor/manifest.md" data-state="">
         <td class="doc-index-title">Vendored third-party assets</td>
