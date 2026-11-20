@@ -260,7 +260,10 @@ family, measured. Both ship on every door, or the door is broken.
    and sets `data-theme` on `<html>` before the body renders. No flash.
 2. **One toggle, one key** — `site/js/app.js` owns the click and writes
    `bdTheme`. A page-local handler that also flips the theme will cancel the
-   shared one (`--brad-theme` did exactly that on `/glossary` and `/press`).
+   shared one (`brad-theme` did exactly that on `/glossary` and `/press`). The
+   self-contained deck keeps its own controller because it has to survive a USB
+   stick, but it now reads and writes the same key, so a choice made on one door
+   survives a visit to the other.
 3. **`theme-color` follows the canvas** — `#0E1117` dark, `#D9DEE5` light.
 4. **The favicon follows too** — `icon-white.svg` on dark, `icon-black.svg` on
    light. A white glyph on a light tab rail is invisible, which is what the
@@ -272,6 +275,26 @@ family, measured. Both ship on every door, or the door is broken.
 
 Theme parity is a **gate, not a pass** — the wordmark bug was found by a phone,
 not by the build. §11.9 owes the screenshot matrix that would have caught it.
+
+### 6.1 A control's state is not a CSS class
+
+The mobile menu used to be `.open` and nothing else. It had no `aria-expanded`,
+no `aria-controls`, no way out except a link, and its collapsed links stayed in
+the tab order because `max-height: 0` hides nothing from a keyboard. The rules:
+
+- The toggle is a real button with `type="button"`, `aria-expanded` and
+  `aria-controls` naming an id that exists. It changes appearance with the
+  state, and its visible text changes between *Menu* and *Close*.
+- Every exit closes it: the button, a link, Escape, a click outside, and
+  crossing the breakpoint. Escape returns focus to the button.
+- A collapsed menu is `visibility: hidden`, not merely clipped. Keyboard users
+  must not be able to tab into links they cannot see.
+- The theme button carries `aria-pressed` (pressed = Light Matter), synced on
+  load as well as on click — the head script runs before `app.js` so there is
+  no window in which the label lies.
+- Active navigation is `aria-current="page"` as well as a gold class.
+- Every door has a skip link and a `<main id="main">`, `/404` included. The deck
+  is the one deliberate exception; it is a self-contained slide file, not a door.
 
 ---
 
@@ -395,6 +418,7 @@ strip target survives, the generator warns rather than shipping it.
 | Every door's links resolve | `tools/check_site_links.py` |
 | One ASCII mark, every consumer | `tools/check_ascii.py` |
 | One shell: skip link, `<main>`, one `h1`, no skipped heading levels | `tools/pageshell.py` |
+| Menu state, one theme key, aria on both toggles, focus exits | `tools/check_interactions.py` |
 | Every essay renders, none has drifted, no orphan page | `tools/gen_essays.py --check` |
 | Type resolves from the ladder | `tools/check_site_css.py` |
 | The doc index is current | `tools/gen_doc_index.py --check` |

@@ -32,17 +32,57 @@ function bradAsciiBanner(pre, name) {
 
   var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  /* ---- Nav toggle ---- */
+  /* ---- Nav toggle ----
+     A menu is a stateful control, not a CSS class. The button says whether it
+     is open, the menu it controls is named, and every way out of the menu
+     closes it: the button, a link, Escape, a click outside, and growing past
+     the breakpoint. Without the last four, a phone user can tab into links
+     that are scrolled out of sight and never get back. */
   var toggle = document.querySelector(".nav-toggle");
   var links = document.querySelector(".nav-links");
   if (toggle && links) {
+    if (!links.id) links.id = "primary-nav";
+    toggle.setAttribute("aria-controls", links.id);
+
+    function setMenu(open, focusFirst) {
+      links.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+      toggle.textContent = open ? "Close" : "Menu";
+      if (open && focusFirst) {
+        var first = links.querySelector("a");
+        if (first) first.focus();
+      }
+    }
+    setMenu(false, false);
+
     toggle.addEventListener("click", function () {
-      links.classList.toggle("open");
+      setMenu(toggle.getAttribute("aria-expanded") !== "true", true);
     });
-    links.querySelectorAll("a").forEach(function (a) {
-      a.addEventListener("click", function () {
-        links.classList.remove("open");
-      });
+    // Delegated: one listener survives replaced links, unlike binding each
+    // anchor at load time.
+    links.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a");
+      if (!a) return;
+      setMenu(false, false);
+      // An in-page link leaves its own target hidden by the closed menu, so
+      // send focus somewhere the user can still see.
+      if ((a.getAttribute("href") || "").charAt(0) === "#") toggle.focus();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") {
+        setMenu(false, false);
+        toggle.focus();
+      }
+    });
+    document.addEventListener("click", function (e) {
+      if (toggle.getAttribute("aria-expanded") !== "true") return;
+      if (!links.contains(e.target) && !toggle.contains(e.target)) setMenu(false, false);
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 1000 && toggle.getAttribute("aria-expanded") === "true") {
+        setMenu(false, false);
+      }
     });
   }
 
@@ -58,6 +98,9 @@ function bradAsciiBanner(pre, name) {
     if (!themeBtn) return;
     var light = currentTheme() === "light";
     themeBtn.setAttribute("aria-label", light ? "Switch to dark mode" : "Switch to light mode");
+    // Pressed means light mode is on. The icon alone cannot say that to a
+    // screen reader, and the label changes on every click.
+    themeBtn.setAttribute("aria-pressed", light ? "true" : "false");
     if (themeMeta) themeMeta.setAttribute("content", light ? "#D9DEE5" : "#0E1117");
     /* The white favicon is invisible on the light chrome rail — the icon
        follows the theme like the wordmark does. */

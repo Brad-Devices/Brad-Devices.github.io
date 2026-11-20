@@ -170,6 +170,13 @@ h4 { font-size: var(--text-md); font-weight: 700; line-height: 1.35; }
 .nav-cta:active { background: var(--brad-gold-dim); }
 .nav-toggle { display: none; background: none; border: 1px solid var(--orbit-border); color: var(--orbit-text); border-radius: 8px; padding: 10px 14px; min-height: 44px; font-size: var(--text-md); cursor: pointer; }
 .nav-toggle:active { background: var(--orbit-black-3); }
+/* The button must not look the same shut and open. aria-expanded is the source
+   of truth, so the visual state is driven from the same attribute JS writes. */
+.nav-toggle[aria-expanded="true"] {
+  border-color: var(--brad-gold); color: var(--brad-gold);
+  background: var(--orbit-black-3);
+}
+.nav-toggle[aria-expanded="true"]:active { background: var(--orbit-black); }
 
 /* ---------- Hero (home) ---------- */
 .hero {
@@ -476,13 +483,21 @@ blockquote.brad-quote cite { display: block; margin-top: 18px; font-style: norma
     background: var(--orbit-black-2);
     border-bottom: 1px solid var(--orbit-border);
     max-height: 0; overflow: hidden;
-    transition: max-height .25s ease;
+    /* max-height alone leaves every collapsed link in the tab order. Hidden
+       visibility takes them out; the delayed transition lets the closing
+       animation finish before they disappear. */
+    visibility: hidden;
+    transition: max-height .25s ease, visibility 0s linear .25s;
   }
   /* 10 items at 13px vertical padding each is ~518px including the CTA. The old
        520px ceiling left two pixels of headroom, which is a clipping bug waiting
        for a font-size change or a longer item. Sized for the current nav with
        room to spare, not tuned to the millimetre. */
-    .nav-links.open { max-height: 720px; }
+  .nav-links.open {
+    max-height: 720px;
+    visibility: visible;
+    transition: max-height .25s ease, visibility 0s;
+  }
   .nav-links a { padding: 13px var(--space-6); width: 100%; min-height: 44px; display: flex; align-items: center; }
   .nav-links a:active { background: var(--orbit-black-3); }
   .nav-cta { margin: 10px var(--space-6) 18px; text-align: center; }
