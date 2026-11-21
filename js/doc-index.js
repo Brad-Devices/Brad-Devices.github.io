@@ -2,7 +2,7 @@
  *
  * The index is generated (tools/gen_doc_index.py) and server-rendered: every
  * row is in the HTML, so a crawler reads the whole tree and a browser with
- * JavaScript off still sees all 138 documents. This file only adds the
+ * JavaScript off still sees all 144 documents. This file only adds the
  * narrowing -- it never decides what is readable.
  *
  * No dependencies, no build step, no framework. It filters on what the row

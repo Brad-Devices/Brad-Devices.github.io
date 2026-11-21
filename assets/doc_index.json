@@ -47,7 +47,7 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 1051,
+   "lines": 1104,
    "group": "The book and the ledgers",
    "group_key": "(root)"
   },
@@ -57,7 +57,7 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 424,
+   "lines": 431,
    "group": "The book and the ledgers",
    "group_key": "(root)"
   },
@@ -117,7 +117,7 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 207,
+   "lines": 226,
    "group": "The book and the ledgers",
    "group_key": "(root)"
   },
@@ -464,10 +464,10 @@
   {
    "path": "Brad Silicon/CPU/EROE.md",
    "title": "EROE — Eco-Render Optimization Engine",
-   "state": "GEN 1",
-   "state_class": "gen1",
-   "declared": "shipping 2026.",
-   "lines": 51,
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 234,
    "group": "Silicon — CPU, GPU, NPU, memory, platform",
    "group_key": "Brad Silicon/"
   },
@@ -752,6 +752,16 @@
    "group_key": "Brad Silicon/"
   },
   {
+   "path": "Brad Silicon/Platform/OMNILINK_PROTOCOL.md",
+   "title": "OmniLink Protocol",
+   "state": "SHIPPED",
+   "state_class": "live",
+   "declared": "`SHIPPED` (reference model) / `DESIGNED` (protocol on a real",
+   "lines": 434,
+   "group": "Silicon — CPU, GPU, NPU, memory, platform",
+   "group_key": "Brad Silicon/"
+  },
+  {
    "path": "Brad Silicon/README.md",
    "title": "Brad Silicon — Silicon Division",
    "state": "",
@@ -760,6 +770,16 @@
    "lines": 18,
    "group": "Silicon — CPU, GPU, NPU, memory, platform",
    "group_key": "Brad Silicon/"
+  },
+  {
+   "path": "Brad Software/OS/AMF_POLICY.md",
+   "title": "AMF — Adaptive Memory Flow",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 261,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
   },
   {
    "path": "Brad Software/OS/BMS_SPEC.md",
@@ -982,12 +1002,22 @@
    "group_key": "Brad Software/"
   },
   {
+   "path": "Brad Software/OS/CONTINUUM_FLOW.md",
+   "title": "Continuum Flow — the cross-device session contract",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 414,
+   "group": "Software — OS, services, drivers, the interface",
+   "group_key": "Brad Software/"
+  },
+  {
    "path": "Brad Software/OS/CUSTOM_TECH.md",
    "title": "Brad Devices — Core Custom Technologies",
    "state": "GEN 1",
    "state_class": "gen1",
    "declared": "shipping 2026",
-   "lines": 89,
+   "lines": 115,
    "group": "Software — OS, services, drivers, the interface",
    "group_key": "Brad Software/"
   },
@@ -1267,7 +1297,7 @@
    "state": "POLICY",
    "state_class": "gen2",
    "declared": "POLICY — adopted 2026-11-17",
-   "lines": 466,
+   "lines": 473,
    "group": "Site",
    "group_key": "site/"
   },
@@ -1287,7 +1317,17 @@
    "state": "",
    "state_class": "",
    "declared": "",
-   "lines": 70,
+   "lines": 71,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/amf/README.md",
+   "title": "AMF — Adaptive Memory Flow (reference model)",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 38,
    "group": "Source and toolchain",
    "group_key": "src/"
   },
@@ -1348,6 +1388,26 @@
    "state_class": "",
    "declared": "",
    "lines": 128,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/continuum/README.md",
+   "title": "Continuum Flow — host-side reference model",
+   "state": "",
+   "state_class": "",
+   "declared": "",
+   "lines": 51,
+   "group": "Source and toolchain",
+   "group_key": "src/"
+  },
+  {
+   "path": "src/omnilink/README.md",
+   "title": "OmniLink reference model",
+   "state": "SHIPPED",
+   "state_class": "live",
+   "declared": "`SHIPPED` (reference model) / `DESIGNED` (protocol on a real radio)",
+   "lines": 39,
    "group": "Source and toolchain",
    "group_key": "src/"
   },

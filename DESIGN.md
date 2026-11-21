@@ -362,12 +362,19 @@ voice exemption honest: `tools/check_voice.py` skips `archive/` because prose
 published a year ago cannot be re-edited, and that reasoning applies to the
 rendered page exactly as it applies to the source file.
 
-**Canonical points at Medium.** Medium published first, so Medium is the
-original and the page here says so, in `<link rel="canonical">` and in
-`isBasedOn`. This is not modesty — it is the only honest option while the
-property is younger than the platform. When the site is the stronger host, the
-canonical moves home; it is one line in one generator, and it moves when the
-evidence says so, not when the mood does.
+**Canonical points home; attribution stays with Medium.** Medium published
+first, and the page says so twice: `isBasedOn` in the JSON-LD and a visible
+"Originally published on Medium" footer. Those are the record. The canonical is
+a different claim — it says which copy a crawler should index — and it now
+points at this site.
+
+This reverses an earlier decision. With the canonical on Medium, all 23 essays
+served here could never rank for themselves, and a Google AI Overview for
+"braddevices" named Medium as its lead source and called the company a
+*project*, quoting the 2025 essay that said "BradVerse isn't a company".
+Attribution was honest; entity ownership was not. The Architect made the call on
+20 November 2026 after seeing the result page. If the evidence changes back, it
+is one line in one generator.
 
 **Platform furniture is stripped, prose is not.** The 2025 files are flattened
 `r.jina.ai` captures, so they arrive with "Press enter or click to view image in

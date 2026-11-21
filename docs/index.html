@@ -6,7 +6,7 @@
 <meta name="google-site-verification" content="P2axB0S18_f20T_ykvaIMlD3jegTPd6tuXpIwRgGPQw">
 
 <title>Brad Devices — specification documents | The book and its eleven parts</title>
-<meta name="description" content="The open Brad Devices specification: a 1,737-line unified compendium plus 138 documents covering the entire ecosystem — silicon, GPU, memory, OS and software — plus the BradSense-Render software reference with its measured receipts.">
+<meta name="description" content="The open Brad Devices specification: a 1,737-line unified compendium plus 144 documents covering the entire ecosystem — silicon, GPU, memory, OS and software — plus the BradSense-Render software reference with its measured receipts.">
 <meta name="theme-color" content="#0E1117">
 <link rel="icon" type="image/png" href="../assets/brad-devices-logos/svg/brad-devices-icon-white.svg">
 <link rel="stylesheet" href="../css/style.css">
@@ -22,25 +22,31 @@
       "publisher": {
         "@id": "https://brad-devices.vercel.app/#org"
       },
-      "description": "Honest receipts for a whole computer company. Software before silicon."
+      "description": "Honest receipts for a whole computer company. Software before silicon.",
+      "mainEntity": {
+        "@id": "https://brad-devices.vercel.app/#org"
+      }
     },
     {
       "@type": "WebPage",
       "@id": "#webpage",
       "name": "Spec Docs",
       "url": "https://brad-devices.vercel.app/docs",
-      "description": "The open Brad Devices specification: a 1,737-line unified compendium plus 138 documents covering the entire ecosystem.",
+      "description": "The open Brad Devices specification: a 1,737-line unified compendium plus 144 documents covering the entire ecosystem.",
       "isPartOf": {
         "@id": "#website"
       },
       "about": {
+        "@id": "https://brad-devices.vercel.app/#org"
+      },
+      "mainEntity": {
         "@id": "https://brad-devices.vercel.app/#org"
       }
     },
     {
       "@type": "TechArticle",
       "name": "BRAD DEVICES — Complete Unified Specification",
-      "headline": "The complete unified specification — 1,737 lines, 41 pages, merged from 138 documents.",
+      "headline": "The complete unified specification — 1,737 lines, 41 pages, merged from 144 documents.",
       "description": "Every part of the Brad Devices ecosystem in one document: CPU, GPU, NPU, memory, OS, software and the BradSense-Render software reference.",
       "author": {
         "@id": "#festus"
@@ -62,7 +68,7 @@
     {
       "@type": "CollectionPage",
       "name": "Brad Devices reference documentation",
-      "description": "138 documents plus the unified spec book."
+      "description": "144 documents plus the unified spec book."
     },
     {
       "@type": "BreadcrumbList",
@@ -117,7 +123,7 @@
       },
       "areaServed": "Worldwide",
       "slogan": "Software before silicon. Receipts after that.",
-      "description": "Brad Devices is a computer company founded by Festus Bradley Nyadimo in Kisumu, Kenya. Its BradVector instruction-set architecture and BradDev Kit toolchain are open source, publicly released and run today: the assembler, interpreter, debugger, profiler and reference test suite are installable, versioned and CI-verified. The BradSense-Renderer spatial and temporal cores ship as software and are measured by a gated metrics harness. The BradISA CPU and the Torox GPU family are designed and specified in a 1,737-line public specification but have not been fabricated. The company ships software and designs silicon; it does not yet manufacture hardware.",
+      "description": "Brad Devices is a computer company in Kisumu, Kenya, founded by Festus Bradley Nyadimo. It ships software; its silicon is designed, not fabricated. Its BradVector instruction-set architecture and BradDev Kit toolchain are open source, publicly released and run today: the assembler, interpreter, debugger, profiler and reference test suite are installable, versioned and CI-verified. The BradSense-Render spatial core ships as a software reference and is measured by a gated harness; the temporal core and the remaining milestones are queued. The BradISA CPU and the Torox GPU family are designed and specified in a 1,737-line public specification but have not been fabricated. The company ships software and designs silicon; it does not yet manufacture hardware.",
       "knowsAbout": [
         "computer architecture",
         "GPU architecture",
@@ -186,12 +192,12 @@
 <link rel="canonical" href="https://brad-devices.vercel.app/docs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Brad Devices — specification documents | The book and its eleven parts">
-<meta property="og:description" content="The open Brad Devices specification: a 1,737-line unified compendium plus 138 documents covering the entire ecosystem — silicon, GPU, memory, OS and software — plus the BradSense-Render software reference with its measured receipts.">
+<meta property="og:description" content="The open Brad Devices specification: a 1,737-line unified compendium plus 144 documents covering the entire ecosystem — silicon, GPU, memory, OS and software — plus the BradSense-Render software reference with its measured receipts.">
 <meta property="og:image" content="https://brad-devices.vercel.app/assets/og.png">
 <meta property="og:url" content="https://brad-devices.vercel.app/docs">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The open Brad Devices specification — 1,737 lines, 138 documents">
-<meta name="twitter:description" content="The open Brad Devices specification: a 1,737-line unified compendium plus 138 documents covering the entire ecosystem — silicon, GPU, memory, OS and software — plus the BradSense-Render software reference with its measured receipts.">
+<meta name="twitter:title" content="The open Brad Devices specification — 1,737 lines, 144 documents">
+<meta name="twitter:description" content="The open Brad Devices specification: a 1,737-line unified compendium plus 144 documents covering the entire ecosystem — silicon, GPU, memory, OS and software — plus the BradSense-Render software reference with its measured receipts.">
 <meta name="twitter:image" content="https://brad-devices.vercel.app/assets/og.png">
 <link rel="apple-touch-icon" href="../assets/brad-devices-logos/png/brad-devices-icon-transparent-white-fill-1024px.png">
 <script>try{var t=localStorage.getItem("bdTheme");if(t==="light")document.documentElement.setAttribute("data-theme","light");}catch(e){}</script>
@@ -231,7 +237,7 @@
     <span class="kicker">Read the architecture</span>
     <h1>One book. Eleven parts.<br>Every register accounted for.</h1>
     <p class="sub">The definitive reference is the <span class="mono">BRAD_DEVICES_COMPLETE_SPEC.md</span>
-    compendium — 1,737 lines across the whole ecosystem, written and kept current by me. It consolidates 138 documents and opens today — it is the paper trail everything on this site points to.</p>
+    compendium — 1,737 lines across the whole ecosystem, written and kept current by me. It consolidates 144 documents and opens today — it is the paper trail everything on this site points to.</p>
   </div>
 </section>
 
@@ -334,7 +340,7 @@
 <section class="section section-alt" id="docs" data-tag="PART 02 · ELEVEN PARTS">
   <div class="container">
     <span class="eyebrow">The chapters</span>
-    <h2>138 documents, one coherent plan.</h2>
+    <h2>144 documents, one coherent plan.</h2>
     <p class="lede">Every subsystem has a deep-dive. A selection:</p>
     <div class="grid grid-2 reveal">
       <div class="receipt"><div class="icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8l4 4-4 4"/><path d="M11 16h8"/></svg></div><div><h3><span class="mono">BradVector ISA</span> <span class="badge live">SOLID</span></h3><p>The BradVector instruction set — the ISA every Torox GPU shares.</p><div class="proof">Public · github.com/Brad-Devices/BradVector</div></div></div>
@@ -362,7 +368,7 @@
   <div class="doc-index-bar">
     <label class="doc-index-label" for="doc-index-q">Filter the tree</label>
     <input class="doc-index-q" id="doc-index-q" type="search" placeholder="path, title, or state" autocomplete="off" aria-describedby="doc-index-count">
-    <span class="doc-index-count" id="doc-index-count"><span id="doc-index-shown">138</span> of <span data-fact="corpus_docs">138</span> documents</span>
+    <span class="doc-index-count" id="doc-index-count"><span id="doc-index-shown">144</span> of <span data-fact="corpus_docs">144</span> documents</span>
   </div>
   <p class="doc-index-note">Every document in the build tree, with the state <em>it</em> declares — quoted, not graded. A document that declares no state is marked as such; the index does not assign one. Paths are receipts that a file exists there: the documents are not published by being listed, and the shipped PDFs are linked above.</p>
   <h3 class="doc-index-group" data-group="(root)">The book and the ledgers <span class="doc-index-gcount">15</span></h3>
@@ -398,13 +404,13 @@
         <td class="doc-index-title">the journey, written in first person, every line a receipt</td>
         <td class="mono doc-index-path">HISTORY.md</td>
         <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
-        <td class="num">1051</td>
+        <td class="num">1104</td>
       </tr>
       <tr data-path="master_index.md" data-state="">
         <td class="doc-index-title">Brad Devices Ecosystem — Master Index</td>
         <td class="mono doc-index-path">MASTER_INDEX.md</td>
         <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
-        <td class="num">424</td>
+        <td class="num">431</td>
       </tr>
       <tr data-path="naming_guide.md" data-state="">
         <td class="doc-index-title">Brad Devices Naming Guide — Consistency Audit</td>
@@ -440,7 +446,7 @@
         <td class="doc-index-title">the live furnace — what I&#x27;m working on, right now</td>
         <td class="mono doc-index-path">TASKS.md</td>
         <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
-        <td class="num">207</td>
+        <td class="num">226</td>
       </tr>
       <tr data-path="trademarks.md" data-state="">
         <td class="doc-index-title">Trademarks and reserved marks</td>
@@ -463,7 +469,7 @@
     </tbody>
   </table>
   </div>
-  <h3 class="doc-index-group" data-group="Brad Silicon/">Silicon — CPU, GPU, NPU, memory, platform <span class="doc-index-gcount">42</span></h3>
+  <h3 class="doc-index-group" data-group="Brad Silicon/">Silicon — CPU, GPU, NPU, memory, platform <span class="doc-index-gcount">43</span></h3>
   <div class="table-wrap">
   <table class="doc-index-table">
     <thead><tr><th scope="col">Document</th><th scope="col">Path</th><th scope="col">Declared state</th><th scope="col" class="num">Lines</th></tr></thead>
@@ -540,11 +546,11 @@
         <td class="doc-index-state"><span class="badge gen1">GEN 1</span> <span class="doc-index-declared">shipping 2026.</span></td>
         <td class="num">124</td>
       </tr>
-      <tr data-path="brad silicon/cpu/eroe.md" data-state="gen 1">
+      <tr data-path="brad silicon/cpu/eroe.md" data-state="">
         <td class="doc-index-title">EROE — Eco-Render Optimization Engine</td>
         <td class="mono doc-index-path">Brad Silicon/CPU/EROE.md</td>
-        <td class="doc-index-state"><span class="badge gen1">GEN 1</span> <span class="doc-index-declared">shipping 2026.</span></td>
-        <td class="num">51</td>
+        <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
+        <td class="num">234</td>
       </tr>
       <tr data-path="brad silicon/cpu/hypercore_api_ref.md" data-state="">
         <td class="doc-index-title">HyperCore Atlas — API Reference</td>
@@ -714,6 +720,12 @@
         <td class="doc-index-state"><span class="badge gen1">GEN 1</span> <span class="doc-index-declared">shipping 2026.</span></td>
         <td class="num">638</td>
       </tr>
+      <tr data-path="brad silicon/platform/omnilink_protocol.md" data-state="shipped">
+        <td class="doc-index-title">OmniLink Protocol</td>
+        <td class="mono doc-index-path">Brad Silicon/Platform/OMNILINK_PROTOCOL.md</td>
+        <td class="doc-index-state"><span class="badge live">SHIPPED</span> <span class="doc-index-declared">`SHIPPED` (reference model) / `DESIGNED` (protocol on a real</span></td>
+        <td class="num">434</td>
+      </tr>
       <tr data-path="brad silicon/readme.md" data-state="">
         <td class="doc-index-title">Brad Silicon — Silicon Division</td>
         <td class="mono doc-index-path">Brad Silicon/README.md</td>
@@ -723,11 +735,17 @@
     </tbody>
   </table>
   </div>
-  <h3 class="doc-index-group" data-group="Brad Software/">Software — OS, services, drivers, the interface <span class="doc-index-gcount">24</span></h3>
+  <h3 class="doc-index-group" data-group="Brad Software/">Software — OS, services, drivers, the interface <span class="doc-index-gcount">26</span></h3>
   <div class="table-wrap">
   <table class="doc-index-table">
     <thead><tr><th scope="col">Document</th><th scope="col">Path</th><th scope="col">Declared state</th><th scope="col" class="num">Lines</th></tr></thead>
     <tbody>
+      <tr data-path="brad software/os/amf_policy.md" data-state="">
+        <td class="doc-index-title">AMF — Adaptive Memory Flow</td>
+        <td class="mono doc-index-path">Brad Software/OS/AMF_POLICY.md</td>
+        <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
+        <td class="num">261</td>
+      </tr>
       <tr data-path="brad software/os/bms_spec.md" data-state="vision">
         <td class="doc-index-title">Brad Mobile Services (BMS) — Complete Architecture</td>
         <td class="mono doc-index-path">Brad Software/OS/BMS_SPEC.md</td>
@@ -860,11 +878,17 @@
         <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
         <td class="num">485</td>
       </tr>
+      <tr data-path="brad software/os/continuum_flow.md" data-state="">
+        <td class="doc-index-title">Continuum Flow — the cross-device session contract</td>
+        <td class="mono doc-index-path">Brad Software/OS/CONTINUUM_FLOW.md</td>
+        <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
+        <td class="num">414</td>
+      </tr>
       <tr data-path="brad software/os/custom_tech.md" data-state="gen 1">
         <td class="doc-index-title">Brad Devices — Core Custom Technologies</td>
         <td class="mono doc-index-path">Brad Software/OS/CUSTOM_TECH.md</td>
         <td class="doc-index-state"><span class="badge gen1">GEN 1</span> <span class="doc-index-declared">shipping 2026</span></td>
-        <td class="num">89</td>
+        <td class="num">115</td>
       </tr>
       <tr data-path="brad software/readme.md" data-state="">
         <td class="doc-index-title">Brad Software — Software Division</td>
@@ -1093,7 +1117,7 @@
     </tbody>
   </table>
   </div>
-  <h3 class="doc-index-group" data-group="src/">Source and toolchain <span class="doc-index-gcount">10</span></h3>
+  <h3 class="doc-index-group" data-group="src/">Source and toolchain <span class="doc-index-gcount">13</span></h3>
   <div class="table-wrap">
   <table class="doc-index-table">
     <thead><tr><th scope="col">Document</th><th scope="col">Path</th><th scope="col">Declared state</th><th scope="col" class="num">Lines</th></tr></thead>
@@ -1102,7 +1126,13 @@
         <td class="doc-index-title">Brad Devices — Reference Implementations</td>
         <td class="mono doc-index-path">src/README.md</td>
         <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
-        <td class="num">70</td>
+        <td class="num">71</td>
+      </tr>
+      <tr data-path="src/amf/readme.md" data-state="">
+        <td class="doc-index-title">AMF — Adaptive Memory Flow (reference model)</td>
+        <td class="mono doc-index-path">src/amf/README.md</td>
+        <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
+        <td class="num">38</td>
       </tr>
       <tr data-path="src/bms/readme.md" data-state="gen 1">
         <td class="doc-index-title">BMS reference API — Brad Mobile Services (v1)</td>
@@ -1139,6 +1169,18 @@
         <td class="mono doc-index-path">src/bvlibs/README.md</td>
         <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
         <td class="num">128</td>
+      </tr>
+      <tr data-path="src/continuum/readme.md" data-state="">
+        <td class="doc-index-title">Continuum Flow — host-side reference model</td>
+        <td class="mono doc-index-path">src/continuum/README.md</td>
+        <td class="doc-index-state"><span class="doc-index-none" title="this document declares no state">—</span></td>
+        <td class="num">51</td>
+      </tr>
+      <tr data-path="src/omnilink/readme.md" data-state="shipped">
+        <td class="doc-index-title">OmniLink reference model</td>
+        <td class="mono doc-index-path">src/omnilink/README.md</td>
+        <td class="doc-index-state"><span class="badge live">SHIPPED</span> <span class="doc-index-declared">`SHIPPED` (reference model) / `DESIGNED` (protocol on a real radio)</span></td>
+        <td class="num">39</td>
       </tr>
       <tr data-path="src/rtl/readme.md" data-state="">
         <td class="doc-index-title">BradISA V2 — RTL Implementation Guide</td>
@@ -1278,7 +1320,7 @@
         <td class="doc-index-title">SITE DESIGN — the Brad Devices site&#x27;s own design guideline</td>
         <td class="mono doc-index-path">site/DESIGN.md</td>
         <td class="doc-index-state"><span class="badge gen2">POLICY</span> <span class="doc-index-declared">POLICY — adopted 2026-11-17</span></td>
-        <td class="num">466</td>
+        <td class="num">473</td>
       </tr>
       <tr data-path="site/vendor/manifest.md" data-state="">
         <td class="doc-index-title">Vendored third-party assets</td>

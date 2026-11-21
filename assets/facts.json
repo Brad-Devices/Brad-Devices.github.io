@@ -1,17 +1,17 @@
 {
   "book_lines": 1737,
-  "corpus_docs": 138,
-  "corpus_lines": 35002,
-  "corpus_lines_floor100": 35000,
-  "corpus_lines_with_archive": 35894,
-  "generated_utc": "2026-11-19T03:27:36Z",
+  "corpus_docs": 144,
+  "corpus_lines": 36535,
+  "corpus_lines_floor100": 36500,
+  "corpus_lines_with_archive": 37427,
+  "generated_utc": "2026-11-21T00:39:21Z",
   "glossary_names": 119,
   "journal_posts": 23,
   "journal_posts_2025": 21,
   "measured": {
     "ctest_status": "listed",
-    "ctest_total": 24,
-    "measured_at_build": "relbuild"
+    "ctest_total": 27,
+    "measured_at_build": "main-relbuild"
   },
   "site_pages": 14,
   "toolchain_tools": 4

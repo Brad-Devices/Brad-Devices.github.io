@@ -391,7 +391,7 @@ function bradAsciiBanner(pre, name) {
         { cmd: "bradgdb saxpy.bvbc -b 4",
           out: function () { return window.BradWasm.call("brad_wasm_gdb").out; } },
         { cmd: "ctest --test-dir build",
-          out: "100% tests passed, 24 tests out of 24\nBradVector platform · green" }
+          out: "100% tests passed, 27 tests out of 27\nBradVector platform · green" }
       ];
       var i = 0;
       var finalLine =

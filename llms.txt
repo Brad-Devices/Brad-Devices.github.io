@@ -14,7 +14,7 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 
 ## Provides
 
-- The one book: a 1,737-line unified compendium (eleven parts, 0–10 plus appendices, 138 documents) covering chips, GPUs, memory, OS, compute, software, console and roadmap — every register accounted for, with Gen 1 / Gen 2 / Vision tagging. Ships as a 41-page branded PDF.
+- The one book: a 1,737-line unified compendium (eleven parts, 0–10 plus appendices, 144 documents) covering chips, GPUs, memory, OS, compute, software, console and roadmap — every register accounted for, with Gen 1 / Gen 2 / Vision tagging. Ships as a 41-page branded PDF.
 - BradVector — the GPU/accelerator instruction-set architecture (dual-issue SIMT, 32-thread warps) that every Torox die runs: BradFx (integrated), BradGfx (dedicated), BradApex (datacenter). It is a separate ISA from the CPU-side BradISA; the two meet on the BradFusion fabric and share memory (SPMP), not instructions.
 - The Torox GPU family — BFT100 (integrated), BGT100 (dedicated), BAT100 (datacenter) — one die name, three jobs, one ISA from phone to rack.
 - The unified memory model — SPMP (DRAM pool) + BradRAM (JEDEC dies with the L4 SRAM assistant cache on the controller) + the Infinity Buffer, zero-copy between CPU, GPU and NPU.
@@ -26,8 +26,8 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 - The journal — 23 founder essays, 2025 to 2026, in order, each with its date, read
   time, word count and cover. Every essay is readable on the site itself at its own URL
   (/journal/<slug> for current pieces, /journal/archive/<slug> for the 2025 transcripts), with no
-  sign-up and no third-party wall; each page links to the Medium original it was published as, and
-  declares that original canonical, because Medium published first. Plus the posts published since as
+  sign-up and no third-party wall; each page is self-canonical, credits the Medium original with
+  isBasedOn and a visible link, and was published there first. Plus the posts published since as
   the platform's own preview (text and image fetched, never retyped, no engagement counts):
   https://brad-devices.vercel.app/journal
 - Selected writing by the founder — 23 essays, published on Medium and readable in
@@ -73,7 +73,7 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 - [Competitive analysis (10 pages)](https://brad-devices.vercel.app/assets/specs/competitive_analysis.pdf): whitespace vs the giants — the software-moat line is shipped.
 - [BradVector Core vs Intel (8 pages)](https://brad-devices.vercel.app/assets/specs/bradcore_vs_intel.pdf): core-by-core vs the incumbent — benchmark tables, honest rows.
 
-## Key documents in the 138-document design tree
+## Key documents in the 144-document design tree
 
 - The whole tree, as data: https://brad-devices.vercel.app/assets/doc_index.json —
   every live document with its path, its length in lines, and the state the
@@ -94,14 +94,14 @@ Nothing is dressed up beyond its tag: no invented benchmarks, no pretend silicon
 - [Products](https://brad-devices.vercel.app/products): every device tagged SHIPPED / DESIGNED / VISION.
 - [Ecosystem](https://brad-devices.vercel.app/ecosystem): silicon, GPU, memory, OS, products and toolchain as one machine in six parts.
 - [Founder](https://brad-devices.vercel.app/founder): Festus Bradley Nyadimo and the working-toolchain argument.
-- [Spec docs](https://brad-devices.vercel.app/docs): the book, the branded spec set, and the 138-document tree.
+- [Spec docs](https://brad-devices.vercel.app/docs): the book, the branded spec set, and the 144-document tree.
 - [Achievements](https://brad-devices.vercel.app/achievements): what actually ships, unattended in CI.
 - [Glossary](https://brad-devices.vercel.app/glossary): the name map — one receipt line per name, including the micro-words (P/E core, NPU, ISA, SRAM, DRAM, GPU, SoC, fabric, die, stack).
 
 ## How to verify
 
 - Read the book: the 41-page PDF or the 1,737-line compendium everything points to.
-- Watch it run: the toolchain executes in CI on every push — ctest 24/24 green, the braddev self-test with 0 traps on saxpy and fib, round-trip bytecode tests, and the in-browser wasm build of the platform API.
+- Watch it run: the toolchain executes in CI on every push — ctest 27/27 green, the braddev self-test with 0 traps on saxpy and fib, round-trip bytecode tests, and the in-browser wasm build of the platform API.
 - Contact: brad.devices.official@gmail.com
 - GitHub: https://github.com/Brad-Devices
 - X: https://x.com/BradDevices
